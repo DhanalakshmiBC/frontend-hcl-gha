@@ -10,8 +10,8 @@ jobs:
         runs-on: ubuntu-latest
 
         steps: 
-        -  name: Checkout code
-           uses: actions/checkout@v2
+        - name: Checkout code
+          uses: actions/checkout@v2
 
         - name: Configure aws credentials
           uses: aws-actions/configure-aws-credentials@v3
@@ -41,6 +41,7 @@ jobs:
           run: |
               docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
               docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
 
               
                
